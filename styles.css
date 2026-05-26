@@ -842,21 +842,13 @@ footer { background: var(--charcoal); border-top: 1px solid rgba(255,255,255,.06
 }
 
 /* ─── NAV LOGO ─── */
-/* The JPEG has a black background. mix-blend-mode:screen on a dark wrapper
-   makes the black invisible and lets only the gold illustration show through. */
-.nav-logo-wrap {
-  background: var(--charcoal);
-  border-radius: 6px;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-  flex-shrink: 0;
-  width: 54px; height: 54px;
-}
+/* Transparent PNG — no background, no blend tricks needed */
 .nav-logo {
-  width: 100%; height: 100%;
+  height: 64px;
+  width: auto;
   object-fit: contain;
-  mix-blend-mode: screen;
   display: block;
+  flex-shrink: 0;
 }
 
 /* ─── PORTFOLIO FILTERED MODE (gallery) ─── */
@@ -912,7 +904,7 @@ footer { background: var(--charcoal); border-top: 1px solid rgba(255,255,255,.06
   nav.s    { padding: 12px 20px; }
   .nl, .nav-quote { display: none; }
   .ham     { display: flex; }
-  .nav-logo-wrap { width: 44px; height: 44px; }
+  .nav-logo { height: 52px; }
 
   #hero    { flex-direction: column; height: auto; min-height: 100svh; }
   .hero-left  { width: 100%; padding: 110px 20px 56px; }
