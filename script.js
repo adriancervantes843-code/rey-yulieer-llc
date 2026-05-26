@@ -68,17 +68,41 @@ const cntObs  = new IntersectionObserver(entries => {
 const statsEl = document.getElementById('stats');
 if (statsEl) cntObs.observe(statsEl);
 
-// ─── PORTFOLIO FILTER ───
+// ─── PORTFOLIO FILTER (gallery mode) ───
 function pFilter(cat, btn) {
   document.querySelectorAll('.pf').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
-  document.querySelectorAll('.pi').forEach(item => {
-    const show = cat === 'all' || item.dataset.cat === cat;
-    item.style.opacity      = show ? '1'    : '0.2';
-    item.style.transform    = show ? 'scale(1)' : 'scale(.97)';
-    item.style.transition   = 'opacity .35s, transform .35s';
-    item.style.pointerEvents = show ? 'auto' : 'none';
-  });
+
+  const grid  = document.getElementById('portGrid');
+  const items = document.querySelectorAll('.pi');
+
+  if (cat === 'all') {
+    // restore masonry — remove filtered mode
+    grid.classList.remove('filtered');
+    items.forEach(item => {
+      delete item.dataset.hidden;
+      item.style.display = '';
+      item.style.opacity = '';
+      item.style.transform = '';
+      item.style.pointerEvents = '';
+    });
+  } else {
+    // gallery mode — show only matching items in uniform grid
+    grid.classList.add('filtered');
+    items.forEach(item => {
+      const show = item.dataset.cat === cat;
+      if (show) {
+        delete item.dataset.hidden;
+        item.style.display = '';
+        item.style.opacity = '1';
+        item.style.transform = 'scale(1)';
+        item.style.pointerEvents = 'auto';
+      } else {
+        item.dataset.hidden = 'true';
+        item.style.display = 'none';
+      }
+    });
+  }
 }
 
 // ─── LIGHTBOX ───
@@ -109,22 +133,22 @@ function doSubmit(e) {
   e.preventDefault();
   const f = e.target;
   const body = [
-    'SOLICITUD DE COTIZACIÓN - REY YULIEER LLC', '',
-    'INFORMACIÓN PERSONAL',
-    'Nombre: '      + f.nombre.value,
-    'Teléfono: '    + f.telefono.value,
-    'Email: '       + f.email.value,
-    'Ubicación: '   + f.ubicacion.value, '',
-    'INFORMACIÓN DEL PROYECTO',
-    'Servicio: '    + f.servicio.value,
-    'Fecha inicio: '+ f.fecha.value,
-    'Presupuesto: ' + f.presupuesto.value,
-    'Descripción: ' + f.descripcion.value,
-    'Comentarios: ' + f.comentarios.value
+    'QUOTE REQUEST - REY YULIEER LLC', '',
+    'PERSONAL INFORMATION',
+    'Name: '         + f.nombre.value,
+    'Phone: '        + f.telefono.value,
+    'Email: '        + f.email.value,
+    'Location: '     + f.ubicacion.value, '',
+    'PROJECT INFORMATION',
+    'Service: '      + f.servicio.value,
+    'Start date: '   + f.fecha.value,
+    'Budget: '       + f.presupuesto.value,
+    'Description: '  + f.descripcion.value,
+    'Comments: '     + f.comentarios.value
   ].join('\n');
   window.location.href =
     'mailto:reyreyyulieer_construction@yahoo.com' +
-    '?subject=Solicitud%20de%20Cotizaci%C3%B3n%20-%20REY%20YULIEER%20LLC' +
+    '?subject=Quote%20Request%20-%20REY%20YULIEER%20LLC' +
     '&body=' + encodeURIComponent(body);
   document.getElementById('fsuccess').style.display = 'block';
   f.reset();
@@ -135,28 +159,28 @@ function doSubmit(e) {
 const testCards = [
   {
     stars: '★★★★★',
-    text:  '"REY YULIEER LLC transformó mi cocina por completo. La calidad de la madera y los acabados son excepcionales. Entregaron antes del plazo y dentro del presupuesto."',
-    init:  'MR', name: 'María Rodríguez', role: 'Boston, MA · Cocina Renovada'
+    text:  '"REY YULIEER LLC completely transformed my kitchen. The quality of the wood and finishes is exceptional. They delivered ahead of schedule and within budget."',
+    init:  'MR', name: 'Maria Rodriguez', role: 'Boston, MA · Kitchen Renovation'
   },
   {
     stars: '★★★★★',
-    text:  '"Renovamos toda la estructura de nuestra casa. El equipo fue profesional, puntual y el resultado final superó todo lo que esperábamos."',
-    init:  'JL', name: 'James López', role: 'Cambridge, MA · Remodelación'
+    text:  '"We renovated our entire home structure with them. The team was professional, punctual and the final result exceeded all our expectations. Highly recommended."',
+    init:  'JL', name: 'James Lopez', role: 'Cambridge, MA · Full Remodel'
   },
   {
     stars: '★★★★★',
-    text:  '"Los closets que fabricaron para mi dormitorio son perfectamente aprovechados. Arte y funcionalidad en un mismo trabajo magistral."',
-    init:  'AS', name: 'Ana Sánchez', role: 'Somerville, MA · Closets'
+    text:  '"The closets they built for my bedroom are exactly what I needed. Every inch perfectly utilized. Art and functionality in one masterful job."',
+    init:  'AS', name: 'Ana Sanchez', role: 'Somerville, MA · Custom Closets'
   },
   {
     stars: '★★★★★',
-    text:  '"Excelente trabajo en el deck exterior de nuestra casa. Madera de primera calidad e instalación impecable. La familia lo disfruta cada día."',
-    init:  'CP', name: 'Carlos Pérez', role: 'Medford, MA · Deck Exterior'
+    text:  '"Excellent work on our exterior deck. Top-quality wood and flawless installation. The whole family enjoys it every single day."',
+    init:  'CP', name: 'Carlos Perez', role: 'Medford, MA · Exterior Deck'
   },
   {
     stars: '★★★★★',
-    text:  '"La planificación y ejecución del proyecto comercial fue perfecta. Dentro del presupuesto y antes del tiempo estimado. Altamente recomendados."',
-    init:  'LM', name: 'Laura Martínez', role: 'Malden, MA · Proyecto Comercial'
+    text:  '"The planning and execution of our commercial project was perfect. On budget and ahead of the estimated timeline. Highly recommended."',
+    init:  'LM', name: 'Laura Martinez', role: 'Malden, MA · Commercial Project'
   },
 ];
 let tIdx = 0;
