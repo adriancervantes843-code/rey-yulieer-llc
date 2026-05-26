@@ -1,11 +1,9 @@
 {
-  "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/rey-yulieer-llc", "destination": "/" }
-  ],
   "redirects": [
-    { "source": "/rey-yulieer-llc.html", "destination": "/", "permanent": true }
+    { "source": "/rey-yulieer-llc.html", "destination": "/", "permanent": true },
+    { "source": "/rey-yulieer-llc",      "destination": "/", "permanent": true },
+    { "source": "/index.html",           "destination": "/", "permanent": true }
   ],
   "headers": [
     {
@@ -17,21 +15,15 @@
     },
     {
       "source": "/TRABAJOS/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     },
     {
       "source": "/logotipo/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     },
     {
-      "source": "/(styles|script)\\.(?:css|js)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, must-revalidate" }
-      ]
+      "source": "/(styles|script)\\.(css|js)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, must-revalidate" }]
     }
   ]
 }
