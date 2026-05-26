@@ -1,85 +1,654 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>REY YULIEER LLC — Construcción & Carpintería de Lujo</title>
-<meta name="description" content="Expertos en carpintería, remodelación y construcción personalizada en Massachusetts. REY YULIEER LLC — Calidad que perdura. +1 857-425-6221">
-<meta name="keywords" content="construcción, carpintería, remodelación, siding, pisos, escaleras, Boston, Massachusetts, REY YULIEER">
+<title>REY YULIEER LLC — Luxury Construction & Carpentry</title>
+<meta name="description" content="Experts in carpentry, remodeling and custom construction in Massachusetts. REY YULIEER LLC — Quality that lasts. +1 857-425-6221">
+<meta name="keywords" content="construction, carpentry, remodeling, siding, flooring, stairs, Boston, Massachusetts, REY YULIEER">
 <meta name="author" content="REY YULIEER LLC">
 
-<!-- Open Graph -->
-<meta property="og:title" content="REY YULIEER LLC — Construcción & Carpintería de Lujo">
-<meta property="og:description" content="Expertos en carpintería, remodelación y construcción personalizada. 15+ años de experiencia. Boston, MA.">
+<!-- Canonical & Open Graph -->
+<link rel="canonical" href="https://rey-yulieer-llc.vercel.app/">
+<meta property="og:title" content="REY YULIEER LLC — Luxury Construction &amp; Carpentry">
+<meta property="og:description" content="Experts in carpentry, remodeling and custom construction. 15+ years of experience. Boston, MA.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://rey-yulieer-llc.vercel.app">
+<meta property="og:url" content="https://rey-yulieer-llc.vercel.app/">
 <meta property="og:image" content="https://rey-yulieer-llc.vercel.app/TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(1).jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="REY YULIEER LLC — Luxury Construction &amp; Carpentry">
+<meta name="twitter:description" content="Experts in carpentry, remodeling and custom construction. Boston, MA.">
+<meta name="twitter:image" content="https://rey-yulieer-llc.vercel.app/TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(1).jpeg">
 
-<!-- Redirect instantáneo -->
-<meta http-equiv="refresh" content="0;url=rey-yulieer-llc.html">
-<link rel="canonical" href="https://rey-yulieer-llc.vercel.app/rey-yulieer-llc.html">
-
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { height: 100%; }
-  body {
-    background: #1A1614;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Georgia', serif;
-  }
-  .loader {
-    text-align: center;
-    color: #FAFAF8;
-  }
-  .logo {
-    font-size: 1.4rem;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    margin-bottom: 28px;
-    opacity: 0;
-    animation: fadeIn .6s .1s forwards;
-  }
-  .logo span { color: #B8924A; }
-  .bar-wrap {
-    width: 180px;
-    height: 1px;
-    background: rgba(255,255,255,.12);
-    margin: 0 auto;
-    overflow: hidden;
-    opacity: 0;
-    animation: fadeIn .4s .4s forwards;
-  }
-  .bar {
-    height: 100%;
-    background: #B8924A;
-    animation: slide 0.9s .5s cubic-bezier(.22,1,.36,1) forwards;
-    transform-origin: left;
-    transform: scaleX(0);
-  }
-  .hint {
-    margin-top: 22px;
-    font-size: .72rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,.3);
-    opacity: 0;
-    animation: fadeIn .4s .7s forwards;
-  }
-  @keyframes fadeIn { to { opacity: 1; } }
-  @keyframes slide  { to { transform: scaleX(1); } }
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="loader">
-    <div class="logo">REY <span>YULIEER</span> LLC</div>
-    <div class="bar-wrap"><div class="bar"></div></div>
-    <p class="hint">Cargando sitio…</p>
+
+<div id="prog"></div>
+<div id="cur"></div>
+<div id="cur2"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="logo">
+    <img src="logotipo/logo.png" alt="Rey Yulieer LLC Logo" class="nav-logo">
+    Rey <span>Yulieer</span> LLC
+  </a>
+  <ul class="nl">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#form-sec">Contact</a></li>
+  </ul>
+  <a href="#form-sec" class="nav-quote">Get a Quote</a>
+  <button class="ham" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobnav">
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#portfolio" onclick="closeMob()">Portfolio</a>
+  <a href="#testimonials" onclick="closeMob()">Testimonials</a>
+  <a href="#form-sec" onclick="closeMob()">Contact</a>
+  <a href="#form-sec" class="btn-a" onclick="closeMob()">Get a Quote</a>
+</div>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-left">
+    <div>
+      <p class="hero-eyebrow">Construction · Carpentry · Design</p>
+      <h1 class="hero-h1">We build spaces that<br><em>last generations.</em></h1>
+      <p class="hero-sub">Experts in carpentry, remodeling and custom construction with premium quality finishes. Every project, a masterpiece.</p>
+      <div class="hero-btns">
+        <a href="#form-sec" class="btn-a">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Request a Quote
+        </a>
+        <a href="https://wa.me/18574256221?text=Hello%20REY%20YULIEER%20LLC.%0AI%20am%20interested%20in%20your%20construction%20and%20carpentry%20services." target="_blank" class="btn-b">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div><div class="trust-num">250+</div><div class="trust-txt">Completed<br>Projects</div></div>
+        <div class="trust-div"></div>
+        <div><div class="trust-num">15+</div><div class="trust-txt">Years of<br>Experience</div></div>
+        <div class="trust-div"></div>
+        <div><div class="trust-num">100%</div><div class="trust-txt">Satisfied<br>Clients</div></div>
+      </div>
+    </div>
   </div>
-  <script>
-    // Redirect inmediato por JS (más rápido que meta refresh)
-    window.location.replace('rey-yulieer-llc.html');
-  </script>
+
+  <div class="hero-right">
+    <div class="hero-right-inner">
+      <div class="hi" style="--i:1">
+        <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.51%20AM.jpeg" alt="Professional residential construction" loading="eager">
+      </div>
+      <div class="hi" style="--i:2">
+        <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.52%20AM.jpeg" alt="Building remodeled with new siding" loading="eager">
+      </div>
+      <div class="hi" style="--i:3">
+        <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(1).jpeg" alt="Remodeled interior with luxury staircase" loading="eager">
+      </div>
+      <div class="hi" style="--i:4">
+        <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.54%20AM%20(4).jpeg" alt="Finished residence with premium finishes" loading="eager">
+      </div>
+    </div>
+  </div>
+  <div class="hero-cut"></div>
+
+  <div class="hero-scroll-hint">
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item">Fine Carpentry</div>
+    <div class="ticker-item">Custom Furniture</div>
+    <div class="ticker-item">Remodeling</div>
+    <div class="ticker-item">Custom Structures</div>
+    <div class="ticker-item">Project Planning</div>
+    <div class="ticker-item">Exterior Decks</div>
+    <div class="ticker-item">Premium Finishes</div>
+    <div class="ticker-item">Residential Construction</div>
+    <div class="ticker-item">Fine Carpentry</div>
+    <div class="ticker-item">Custom Furniture</div>
+    <div class="ticker-item">Remodeling</div>
+    <div class="ticker-item">Custom Structures</div>
+    <div class="ticker-item">Project Planning</div>
+    <div class="ticker-item">Exterior Decks</div>
+    <div class="ticker-item">Premium Finishes</div>
+    <div class="ticker-item">Residential Construction</div>
+  </div>
+</div>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="about-images reveal">
+    <div class="about-img-main">
+      <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM.jpeg" alt="REY YULIEER construction team on site" loading="lazy">
+    </div>
+    <div class="about-img-sec">
+      <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(1).jpeg" alt="Finished interior: crystal chandelier and luxury staircase" loading="lazy">
+    </div>
+    <div class="about-badge">
+      <span class="about-badge-num">15+</span>
+      <span class="about-badge-txt">Years of<br>Experience</span>
+    </div>
+    <div class="about-gold-line"></div>
+  </div>
+
+  <div class="about-text">
+    <p class="section-eyebrow reveal">Who We Are</p>
+    <h2 class="section-h2 reveal d1">Construction with <em>precision</em> and expertise</h2>
+    <p class="about-body reveal d2">At REY YULIEER LLC we combine traditional craftsmanship, modern technology and over fifteen years of construction experience to transform ideas into functional and lasting spaces.</p>
+    <p class="about-body reveal d3">Our commitment is to provide personalized solutions with attention to detail, on-time delivery and exceptional quality in every project we undertake.</p>
+    <div class="about-features reveal d4">
+      <div class="af">
+        <div class="af-icon">🏆</div>
+        <div class="af-t">Guaranteed Quality</div>
+        <div class="af-d">Premium materials, carefully selected</div>
+      </div>
+      <div class="af">
+        <div class="af-icon">⏱</div>
+        <div class="af-t">On-Time Delivery</div>
+        <div class="af-d">Deadlines we always meet</div>
+      </div>
+      <div class="af">
+        <div class="af-icon">🎯</div>
+        <div class="af-t">Attention to Detail</div>
+        <div class="af-d">Artisan precision in every finish</div>
+      </div>
+      <div class="af">
+        <div class="af-icon">🤝</div>
+        <div class="af-t">Full Warranty</div>
+        <div class="af-d">Your satisfaction, our top priority</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS ─── -->
+<div id="stats">
+  <div class="stat">
+    <span class="stat-n" data-target="250" data-suffix="+">0</span>
+    <span class="stat-l">Completed Projects</span>
+  </div>
+  <div class="stat">
+    <span class="stat-n" data-target="100" data-suffix="%">0</span>
+    <span class="stat-l">Satisfied Clients</span>
+  </div>
+  <div class="stat">
+    <span class="stat-n" data-target="15" data-suffix="+">0</span>
+    <span class="stat-l">Years of Experience</span>
+  </div>
+  <div class="stat">
+    <span class="stat-n">24/7</span>
+    <span class="stat-l">Personalized Support</span>
+  </div>
+</div>
+
+<!-- ─── SERVICES ─── -->
+<section id="services">
+  <div class="services-top">
+    <div>
+      <p class="section-eyebrow reveal">What We Do</p>
+      <h2 class="section-h2 reveal d1">Our <em>Services</em></h2>
+    </div>
+    <p class="section-lead reveal d2">Every project deserves a unique approach. We offer comprehensive construction and carpentry solutions tailored to your vision and budget.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc reveal">
+      <div class="svc-num">01</div>
+      <div class="svc-img">
+        <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(3).jpeg" alt="Refined wood staircase, fine carpentry" loading="lazy">
+      </div>
+      <h3 class="svc-n">Custom Woodwork</h3>
+      <p class="svc-d">We design and build custom furniture that blends functionality, durability and elegance. Each piece, a handcrafted masterwork.</p>
+      <div class="svc-arrow">Learn more <span>→</span></div>
+    </div>
+
+    <div class="svc reveal d1">
+      <div class="svc-num">02</div>
+      <div class="svc-img">
+        <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(2).jpeg" alt="Floor installation during kitchen remodel" loading="lazy">
+      </div>
+      <h3 class="svc-n">Interior Renovation</h3>
+      <p class="svc-d">We repair and renovate interior spaces, restoring functionality and beauty with the best materials on the market.</p>
+      <div class="svc-arrow">Learn more <span>→</span></div>
+    </div>
+
+    <div class="svc reveal d2">
+      <div class="svc-num">03</div>
+      <div class="svc-img">
+        <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.54%20AM.jpeg" alt="New structure with ZIP System, construction in progress" loading="lazy">
+      </div>
+      <h3 class="svc-n">Custom Structures</h3>
+      <p class="svc-d">We create unique structures tailored to the specific needs of each project with precision engineering.</p>
+      <div class="svc-arrow">Learn more <span>→</span></div>
+    </div>
+
+    <div class="svc reveal d1">
+      <div class="svc-num">04</div>
+      <div class="svc-img">
+        <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.52%20AM%20(1).jpeg" alt="Team working on exterior project" loading="lazy">
+      </div>
+      <h3 class="svc-n">Project Planning</h3>
+      <p class="svc-d">We develop detailed strategies to optimize timelines, resources and budget at every stage of your project.</p>
+      <div class="svc-arrow">Learn more <span>→</span></div>
+    </div>
+
+    <div class="svc reveal d2">
+      <div class="svc-num">05</div>
+      <div class="svc-img">
+        <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(5).jpeg" alt="Large exterior multifamily remodeling project" loading="lazy">
+      </div>
+      <h3 class="svc-n">Construction Experts</h3>
+      <p class="svc-d">Full expertise in residential and commercial projects held to the highest industry standards.</p>
+      <div class="svc-arrow">Learn more <span>→</span></div>
+    </div>
+
+    <div class="svc reveal d3">
+      <div class="svc-num">06</div>
+      <div class="svc-img">
+        <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.52%20AM.jpeg" alt="Multifamily building remodeled with professional finish" loading="lazy">
+      </div>
+      <h3 class="svc-n">Professional Service</h3>
+      <p class="svc-d">Personalized attention, reliability and guaranteed quality at every stage. Your satisfaction is our greatest reward.</p>
+      <div class="svc-arrow">Learn more <span>→</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MATERIALS ─── -->
+<section id="materials">
+  <div class="mat-h">
+    <p class="section-eyebrow reveal">Materials</p>
+    <h2 class="section-h2 reveal d1">We work with the<br>finest <em>materials</em></h2>
+  </div>
+  <div class="mat-grid reveal d2">
+    <div class="mat-item">
+      <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(3).jpeg" alt="Oak wood: staircase with oak treads" loading="lazy">
+      <div class="mat-label">Oak Wood</div>
+    </div>
+    <div class="mat-item">
+      <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(4).jpeg" alt="Treated wood: deck and exterior structure" loading="lazy">
+      <div class="mat-label">Treated Wood</div>
+    </div>
+    <div class="mat-item">
+      <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(2).jpeg" alt="Floor installation: large-format porcelain" loading="lazy">
+      <div class="mat-label">Floors & Tile</div>
+    </div>
+    <div class="mat-item">
+      <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(1).jpeg" alt="Luxury interior finishes: crystal chandelier and staircase" loading="lazy">
+      <div class="mat-label">Interior Finishes</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PORTFOLIO ─── -->
+<section id="portfolio">
+  <div class="port-top">
+    <div>
+      <p class="section-eyebrow reveal">Portfolio</p>
+      <h2 class="section-h2 reveal d1">Our <em>completed work</em></h2>
+    </div>
+    <p class="section-lead reveal d2">Every project we deliver reflects our commitment to excellence. Click any image to view it in detail.</p>
+  </div>
+
+  <div class="port-filters reveal">
+    <button class="pf on" onclick="pFilter('all',this)">All</button>
+    <button class="pf" onclick="pFilter('exteriors',this)">Exteriors</button>
+    <button class="pf" onclick="pFilter('interiors',this)">Interiors</button>
+    <button class="pf" onclick="pFilter('remodeling',this)">Remodeling</button>
+    <button class="pf" onclick="pFilter('construction',this)">Construction</button>
+  </div>
+
+  <div class="port-grid" id="portGrid">
+    <div class="pi" data-cat="interiors" onclick="openLb(this)">
+      <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(1).jpeg" alt="Finished interior: crystal chandelier and wrought-iron staircase" data-title="Staircase & Luxury Lighting" loading="lazy">
+      <div class="pi-ov"><div><div class="pi-cat">Interiors</div><div class="pi-title">Staircase &amp; Luxury Lighting</div></div></div>
+      <button class="pi-expand" aria-label="Expand">⤢</button>
+    </div>
+    <div class="pi" data-cat="interiors" onclick="openLb(this)">
+      <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(3).jpeg" alt="Refined oak wood staircase with white railing" data-title="Refined Wood Staircase" loading="lazy">
+      <div class="pi-ov"><div><div class="pi-cat">Interiors</div><div class="pi-title">Refined Wood Staircase</div></div></div>
+      <button class="pi-expand" aria-label="Expand">⤢</button>
+    </div>
+    <div class="pi" data-cat="interiors" onclick="openLb(this)">
+      <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(2).jpeg" alt="Kitchen remodel: porcelain floor installation" data-title="Kitchen Remodel" loading="lazy">
+      <div class="pi-ov"><div><div class="pi-cat">Interiors</div><div class="pi-title">Kitchen Remodel</div></div></div>
+      <button class="pi-expand" aria-label="Expand">⤢</button>
+    </div>
+    <div class="pi" data-cat="exteriors" onclick="openLb(this)">
+      <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(4).jpeg" alt="Blue vinyl siding with deck and brick chimney" data-title="Siding & Deck" loading="lazy">
+      <div class="pi-ov"><div><div class="pi-cat">Exteriors</div><div class="pi-title">Siding &amp; Deck</div></div></div>
+      <button class="pi-expand" aria-label="Expand">⤢</button>
+    </div>
+    <div class="pi" data-cat="remodeling" onclick="openLb(this)">
+      <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM%20(5).jpeg" alt="Full exterior residential multifamily remodel" data-title="Complete Exterior Remodel" loading="lazy">
+      <div class="pi-ov"><div><div class="pi-cat">Remodeling</div><div class="pi-title">Complete Exterior Remodel</div></div></div>
+      <button class="pi-expand" aria-label="Expand">⤢</button>
+    </div>
+    <div class="pi" data-cat="construction" onclick="openLb(this)">
+      <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.51%20AM.jpeg" alt="New residential construction with cedar shingle siding" data-title="New Residence" loading="lazy">
+      <div class="pi-ov"><div><div class="pi-cat">Construction</div><div class="pi-title">New Residence</div></div></div>
+      <button class="pi-expand" aria-label="Expand">⤢</button>
+    </div>
+    <div class="pi" data-cat="exteriors" onclick="openLb(this)">
+      <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.52%20AM.jpeg" alt="Multifamily building remodeled with navy siding and white trim" data-title="Multifamily Building" loading="lazy">
+      <div class="pi-ov"><div><div class="pi-cat">Exteriors</div><div class="pi-title">Multifamily Building</div></div></div>
+      <button class="pi-expand" aria-label="Expand">⤢</button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESS ─── -->
+<section id="process">
+  <div class="process-wrap">
+    <div class="process-left reveal">
+      <p class="section-eyebrow">Our Process</p>
+      <h2 class="section-h2 reveal d1">How we <em>work</em></h2>
+      <div class="process-img" style="margin-top:36px;">
+        <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.53%20AM.jpeg" alt="REY YULIEER team installing siding on site" loading="lazy">
+        <div class="process-img-badge">Real Craftsmanship</div>
+      </div>
+    </div>
+    <div class="process-steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-t">Consultation &amp; Site Visit</div>
+          <div class="step-d">We visit your property, listen to your needs and evaluate the space to design the perfect solution.</div>
+        </div>
+      </div>
+      <div class="step reveal d1">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-t">Design &amp; Proposal</div>
+          <div class="step-d">We develop a detailed proposal with plans, materials, costs and a schedule tailored to your budget.</div>
+        </div>
+      </div>
+      <div class="step reveal d2">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-t">Material Selection</div>
+          <div class="step-d">We work together to select the best materials: woods, finishes, hardware and more.</div>
+        </div>
+      </div>
+      <div class="step reveal d3">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-t">Precision Execution</div>
+          <div class="step-d">Our team executes each phase with artisan discipline, keeping the site orderly and progress on schedule.</div>
+        </div>
+      </div>
+      <div class="step reveal d4">
+        <div class="step-num">05</div>
+        <div>
+          <div class="step-t">Delivery &amp; Warranty</div>
+          <div class="step-d">We deliver the finished project with a detailed final inspection and a full warranty on our work.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section id="testimonials">
+  <div class="test-top">
+    <div>
+      <p class="section-eyebrow reveal">Testimonials</p>
+      <h2 class="section-h2 reveal d1">What our <em>clients say</em></h2>
+    </div>
+    <div class="test-nav">
+      <button class="tn-btn" onclick="prevTest()">←</button>
+      <button class="tn-btn" onclick="nextTest()">→</button>
+    </div>
+  </div>
+  <div class="test-grid" id="testGrid">
+    <div class="tc reveal">
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-text">"REY YULIEER LLC completely transformed my kitchen. The quality of the wood and finishes is exceptional. They delivered ahead of schedule and within budget."</p>
+      <div class="tc-author">
+        <div class="tc-av">MR</div>
+        <div><div class="tc-name">Maria Rodriguez</div><div class="tc-role">Boston, MA · Kitchen Renovation</div></div>
+      </div>
+    </div>
+    <div class="tc reveal d1">
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-text">"We renovated our entire home structure with them. The team was professional, punctual and the final result exceeded all our expectations. Highly recommended."</p>
+      <div class="tc-author">
+        <div class="tc-av">JL</div>
+        <div><div class="tc-name">James Lopez</div><div class="tc-role">Cambridge, MA · Full Remodel</div></div>
+      </div>
+    </div>
+    <div class="tc reveal d2">
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-text">"The closets they built for my bedroom are exactly what I needed. Every inch perfectly utilized. Art and functionality in one masterful job."</p>
+      <div class="tc-author">
+        <div class="tc-av">AS</div>
+        <div><div class="tc-name">Ana Sanchez</div><div class="tc-role">Somerville, MA · Custom Closets</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BAND ─── -->
+<section id="ctaband">
+  <div class="ctab-bg">
+    <img src="TRABAJOS/WhatsApp%20Image%202026-05-24%20at%208.32.54%20AM%20(4).jpeg" alt="Finished lake-view home, premium exterior" loading="lazy">
+  </div>
+  <div class="ctab-overlay"></div>
+  <div class="ctab-content">
+    <h2 class="ctab-h">Your next project deserves<br><em>expert hands.</em></h2>
+    <div class="ctab-actions">
+      <a href="#form-sec" class="ctab-btn primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Request a Quote
+      </a>
+      <a href="https://wa.me/18574256221?text=Hello%20REY%20YULIEER%20LLC.%0AI%20am%20interested%20in%20learning%20more%20about%20your%20services%3A%0A%E2%9C%93%20Custom%20Woodwork%20%E2%9C%93%20Interior%20Renovation%20%E2%9C%93%20Custom%20Structures%20%E2%9C%93%20Project%20Planning%0AI%20would%20like%20to%20receive%20information%20and%20a%20personalized%20quote." target="_blank" class="ctab-btn wa">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Contact via WhatsApp
+      </a>
+      <a href="tel:+18574256221" class="ctab-btn outline">
+        📞  857-425-6221
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FORM ─── -->
+<section id="form-sec">
+  <div class="form-left">
+    <p class="section-eyebrow reveal">Free Quote</p>
+    <h2 class="section-h2 reveal d1">Tell us about your <em>project</em></h2>
+    <p class="section-lead reveal d2">Fill out the form and receive a personalized proposal in less than 24 hours. No commitment required.</p>
+    <div class="contact-block reveal d3">
+      <div class="cbi">
+        <div class="cbi-ic">📞</div>
+        <div><div class="cbi-l">Phone</div><div class="cbi-v"><a href="tel:+18574256221">857-425-6221</a></div></div>
+      </div>
+      <div class="cbi">
+        <div class="cbi-ic">✉️</div>
+        <div><div class="cbi-l">Email</div><div class="cbi-v"><a href="mailto:reyreyyulieer_construction@yahoo.com" style="font-size:.82rem;">reyreyyulieer_construction@yahoo.com</a></div></div>
+      </div>
+      <div class="cbi">
+        <div class="cbi-ic">💬</div>
+        <div><div class="cbi-l">WhatsApp</div><div class="cbi-v"><a href="https://wa.me/18574256221" target="_blank">+1 (857) 425-6221</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <form class="qf" onsubmit="doSubmit(event)">
+    <div class="fg-section">Personal Information</div>
+    <div class="fg">
+      <div class="fgi">
+        <label for="fn">Full Name *</label>
+        <input type="text" id="fn" name="nombre" required placeholder="Your full name">
+      </div>
+      <div class="fgi">
+        <label for="ft">Phone *</label>
+        <input type="tel" id="ft" name="telefono" required placeholder="(857) 000-0000">
+      </div>
+      <div class="fgi">
+        <label for="fe">Email Address *</label>
+        <input type="email" id="fe" name="email" required placeholder="you@email.com">
+      </div>
+      <div class="fgi">
+        <label for="fu">Address / Location *</label>
+        <input type="text" id="fu" name="ubicacion" required placeholder="City, State">
+      </div>
+    </div>
+
+    <div class="fg-section">Project Information</div>
+    <div class="fg">
+      <div class="fgi">
+        <label for="fs">Service of Interest *</label>
+        <select id="fs" name="servicio" required>
+          <option value="">Select a service...</option>
+          <option>Custom Woodwork</option>
+          <option>Interior Renovation</option>
+          <option>Custom Structures</option>
+          <option>Project Planning</option>
+          <option>Construction Experts</option>
+          <option>Professional Service</option>
+          <option>Multiple Services</option>
+        </select>
+      </div>
+      <div class="fgi">
+        <label for="ff">Estimated Start Date *</label>
+        <input type="date" id="ff" name="fecha" required>
+      </div>
+      <div class="fgi">
+        <label for="fp">Available Budget *</label>
+        <select id="fp" name="presupuesto" required>
+          <option value="">Select a range...</option>
+          <option>Under $5,000</option>
+          <option>$5,000 – $15,000</option>
+          <option>$15,000 – $30,000</option>
+          <option>$30,000 – $60,000</option>
+          <option>$60,000 – $100,000</option>
+          <option>Over $100,000</option>
+        </select>
+      </div>
+      <div class="fgi full">
+        <label for="fd">Project Description *</label>
+        <textarea id="fd" name="descripcion" required placeholder="Describe your project: what you need, approximate dimensions, preferred materials, style references..."></textarea>
+      </div>
+      <div class="fgi full">
+        <label for="fc">Additional Comments</label>
+        <textarea id="fc" name="comentarios" placeholder="Any additional details you think are important..." style="min-height:80px;"></textarea>
+      </div>
+    </div>
+
+    <div class="f-submit">
+      <button type="submit" class="fsb">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Send Request
+      </button>
+      <p class="f-note">100% confidential information.<br>We respond in less than 24 hours.</p>
+    </div>
+    <div id="fsuccess">✓ Request sent. We will contact you shortly.</div>
+  </form>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="fl-brand">Rey <span>Yulieer</span> LLC</div>
+      <div class="fl-sub">Construction &amp; Carpentry Specialists</div>
+      <p class="fl-desc">We transform ideas into exceptional spaces. Over 15 years building dreams with craftsmanship, precision and commitment.</p>
+      <div class="fl-icons">
+        <a href="https://wa.me/18574256221" target="_blank" class="fli" title="WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="mailto:reyreyyulieer_construction@yahoo.com" class="fli" title="Email">✉</a>
+        <a href="tel:+18574256221" class="fli" title="Call">📞</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="fc-title">Services</div>
+      <ul class="fc-links">
+        <li><a href="#services">Custom Woodwork</a></li>
+        <li><a href="#services">Interior Renovation</a></li>
+        <li><a href="#services">Custom Structures</a></li>
+        <li><a href="#services">Project Planning</a></li>
+        <li><a href="#services">Construction</a></li>
+        <li><a href="#services">Professional Service</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="fc-title">Company</div>
+      <ul class="fc-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#form-sec">Get a Quote</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="fc-title">Contact</div>
+      <div class="fc-citem">
+        <div class="fc-cl">Phone</div>
+        <div class="fc-cv"><a href="tel:+18574256221">857-425-6221</a></div>
+      </div>
+      <div class="fc-citem">
+        <div class="fc-cl">Email</div>
+        <div class="fc-cv"><a href="mailto:reyreyyulieer_construction@yahoo.com" style="font-size:.78rem;word-break:break-all;">reyreyyulieer_construction@yahoo.com</a></div>
+      </div>
+      <div class="fc-btns">
+        <a href="https://wa.me/18574256221?text=Hello%20REY%20YULIEER%20LLC." target="_blank" class="fc-btn wa">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="mailto:reyreyyulieer_construction@yahoo.com" class="fc-btn em">✉ Send Email</a>
+        <a href="#form-sec" class="fc-btn qt">📋 Get a Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="fb-copy">© 2025 <span>Rey Yulieer LLC</span>. All rights reserved.</div>
+    <div class="fb-legal">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<div class="waf">
+  <div class="waf-label">Contact via WhatsApp</div>
+  <a href="https://wa.me/18574256221?text=Hello%20REY%20YULIEER%20LLC.%0AI%20am%20interested%20in%20learning%20more%20about%20your%20services%3A%0A%E2%9C%93%20Custom%20Woodwork%20%E2%9C%93%20Interior%20Renovation%20%E2%9C%93%20Custom%20Structures%20%E2%9C%93%20Project%20Planning%0AI%20would%20like%20to%20receive%20information%20and%20a%20personalized%20quote." target="_blank" class="waf-btn" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" onclick="closeLb(event)">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeLb()">✕ Close</button>
+    <img id="lb-img" class="lb-img" src="" alt="">
+    <div class="lb-cap" id="lb-cap"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
