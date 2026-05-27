@@ -129,25 +129,27 @@ document.addEventListener('keydown', e => {
 });
 
 // ─── CONTACT FORM ───
+const CONTACT_EMAIL = 'rey.yulieer_construction@yahoo.com';
+
 function doSubmit(e) {
   e.preventDefault();
   const f = e.target;
   const body = [
     'QUOTE REQUEST - REY YULIEER LLC', '',
     'PERSONAL INFORMATION',
-    'Name: '         + f.nombre.value,
-    'Phone: '        + f.telefono.value,
-    'Email: '        + f.email.value,
-    'Location: '     + f.ubicacion.value, '',
+    'Name: '        + f.nombre.value,
+    'Phone: '       + f.telefono.value,
+    'Email: '       + f.email.value,
+    'Location: '    + f.ubicacion.value, '',
     'PROJECT INFORMATION',
-    'Service: '      + f.servicio.value,
-    'Start date: '   + f.fecha.value,
-    'Budget: '       + f.presupuesto.value,
-    'Description: '  + f.descripcion.value,
-    'Comments: '     + f.comentarios.value
+    'Service: '     + f.servicio.value,
+    'Start date: '  + f.fecha.value,
+    'Budget: '      + f.presupuesto.value,
+    'Description: ' + f.descripcion.value,
+    'Comments: '    + f.comentarios.value
   ].join('\n');
   window.location.href =
-    'mailto:rey.yulieer_construction@yahoo.com' +
+    'mailto:' + CONTACT_EMAIL +
     '?subject=Quote%20Request%20-%20REY%20YULIEER%20LLC' +
     '&body=' + encodeURIComponent(body);
   document.getElementById('fsuccess').style.display = 'block';
