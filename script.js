@@ -147,7 +147,7 @@ function doSubmit(e) {
     'Comments: '     + f.comentarios.value
   ].join('\n');
   window.location.href =
-    'mailto:reyreyyulieer_construction@yahoo.com' +
+    'mailto:rey.yulieer_construction@yahoo.com' +
     '?subject=Quote%20Request%20-%20REY%20YULIEER%20LLC' +
     '&body=' + encodeURIComponent(body);
   document.getElementById('fsuccess').style.display = 'block';
