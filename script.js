@@ -129,7 +129,7 @@ document.addEventListener('keydown', e => {
 });
 
 // ─── CONTACT FORM ───
-const CONTACT_EMAIL = 'rey.yulieer_construction@yahoo.com';
+const CONTACT_EMAIL = 'reyyulieer_construction@yahoo.com';
 
 function doSubmit(e) {
   e.preventDefault();
